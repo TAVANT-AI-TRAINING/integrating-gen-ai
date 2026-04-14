@@ -1,0 +1,19 @@
+[project]
+name = "demo-10-rag-retrieval-pipeline"
+version = "0.1.0"
+description = "RAG Retrieval Pipeline - Focus on retrieval strategies and scenarios"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "langchain>=0.3.0",
+    "langchain-openai>=0.2.0",
+    "langchain-chroma>=0.1.0",
+    "langchain-pinecone>=0.2.0",
+    "langchain-community>=0.3.0",
+    "chromadb>=0.4.22",
+    "pinecone-client>=5.0.0",
+    "pypdf>=4.0.0",
+    "beautifulsoup4>=4.12.0",
+    "python-dotenv>=1.0.0",
+]
+

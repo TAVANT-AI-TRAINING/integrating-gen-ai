@@ -1,0 +1,1 @@
+All code must pass automated tests before merging. Security reviews are required for authentication changes.

@@ -1,0 +1,28 @@
+Company Policy Guidelines
+
+1. Remote Work Policy
+Employees are authorized to work remotely up to 3 days per week with manager approval. Remote work requires maintaining availability during core hours (10 AM - 3 PM).
+
+2. Code Review Policy
+All code changes must undergo peer review before merging. Reviews should focus on:
+- Code quality and maintainability
+- Test coverage
+- Documentation completeness
+- Security considerations
+
+3. Security Guidelines
+- Use strong passwords (minimum 12 characters)
+- Enable two-factor authentication
+- Never share credentials
+- Report security incidents immediately
+
+4. Meeting Guidelines
+- Keep meetings to 30 minutes or less
+- Always share an agenda beforehand
+- Start and end on time
+- Take actionable notes
+
+5. Communication Standards
+- Respond to emails within 24 hours
+- Use appropriate channels (Slack for quick questions, email for formal communication)
+- Be respectful and professional in all communication

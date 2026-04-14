@@ -1,0 +1,21 @@
+# ==========================================
+# LLM Provider Selection
+# ==========================================
+# Options: "openai" or "gemini"
+LLM_PROVIDER=openai
+
+# ==========================================
+# Google Gemini Configuration
+# ==========================================
+# Required when LLM_PROVIDER=gemini
+GEMINI_API_KEY=sample-gemini-api-key
+GEMINI_MODEL_NAME=gemini-2.5-flash
+GEMINI_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+
+# ==========================================
+# OpenAI Configuration
+# ==========================================
+# Required when LLM_PROVIDER=openai
+OPENAI_API_KEY=sample-openai-api-key
+OPENAI_MODEL_NAME=gpt-4o-mini
+OPENAI_BASE_URL=https://api.openai.com/v1/

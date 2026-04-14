@@ -1,0 +1,31 @@
+[project]
+name = "demo-12-rag-fastapi-service"
+version = "1.0.0"
+description = "FastAPI-based RAG service: Ingestion, Retrieval, and Generation endpoints"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+    "pydantic>=2.0.0",
+    "python-multipart>=0.0.6",
+    "langchain>=0.1.0",
+    "langchain-community>=0.0.20",
+    "langchain-openai>=0.0.5",
+    "langchain-chroma>=0.1.0",
+    "langchain-pinecone>=0.1.0",
+    "langchain-text-splitters>=0.0.1",
+    "chromadb>=0.4.22",
+    "pinecone-client>=5.0.0",
+    "pypdf>=4.0.0",
+    "beautifulsoup4>=4.12.0",
+    "python-dotenv>=1.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+only-include = ["main.py"]

@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LangChain Streaming Demo</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        max-width: 800px;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .header p {
+        opacity: 0.9;
+        font-size: 14px;
+      }
+
+      .content {
+        padding: 30px;
+      }
+
+      .input-section {
+        margin-bottom: 20px;
+      }
+
+      .input-section label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #333;
+      }
+
+      .input-section textarea {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 14px;
+        font-family: inherit;
+        resize: vertical;
+        min-height: 80px;
+        transition: border-color 0.3s;
+      }
+
+      .input-section textarea:focus {
+        outline: none;
+        border-color: #667eea;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      button {
+        flex: 1;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .btn-stream {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+      }
+
+      .btn-stream:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+      }
+
+      .btn-normal {
+        background: #f0f0f0;
+        color: #333;
+      }
+
+      .btn-normal:hover:not(:disabled) {
+        background: #e0e0e0;
+      }
+
+      .btn-clear {
+        background: #ff6b6b;
+        color: white;
+      }
+
+      .btn-clear:hover:not(:disabled) {
+        background: #ff5252;
+      }
+
+      button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+
+      .response-section {
+        margin-top: 20px;
+      }
+
+      .response-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .response-header h3 {
+        color: #333;
+        font-size: 16px;
+      }
+
+      .status {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        color: #666;
+      }
+
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #ccc;
+      }
+
+      .status-dot.active {
+        background: #4caf50;
+        animation: pulse 1.5s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+
+      .response-box {
+        background: #f9f9f9;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 16px;
+        min-height: 150px;
+        max-height: 400px;
+        overflow-y: auto;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .response-box:empty::before {
+        content: "Response will appear here...";
+        color: #999;
+        font-style: italic;
+      }
+
+      .stats {
+        margin-top: 10px;
+        display: flex;
+        gap: 20px;
+        font-size: 12px;
+        color: #666;
+      }
+
+      .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .stat-label {
+        font-weight: 600;
+      }
+
+      .error {
+        background: #fff3f3;
+        border: 2px solid #ff6b6b;
+        color: #d63031;
+        padding: 12px;
+        border-radius: 8px;
+        margin-top: 10px;
+      }
+
+      .typing-indicator {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #667eea;
+        animation: blink 1s infinite;
+        margin-left: 4px;
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 0.2;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>🚀 LangChain Streaming Demo</h1>
+        <p>Experience real-time AI responses with streaming</p>
+      </div>
+
+      <div class="content">
+        <div class="input-section">
+          <label for="message">Enter your message:</label>
+          <textarea
+            id="message"
+            placeholder="Ask me anything... (e.g., 'Write a short story about a robot learning to paint')"
+          >
+Write a short story about a robot learning to paint</textarea
+          >
+        </div>
+
+        <div class="buttons">
+          <button
+            class="btn-stream"
+            id="btnStream"
+            onclick="sendStreamingRequest()"
+          >
+            ⚡ Stream Response
+          </button>
+          <button
+            class="btn-normal"
+            id="btnNormal"
+            onclick="sendNormalRequest()"
+          >
+            📨 Normal Response
+          </button>
+          <button class="btn-clear" onclick="clearResponse()">🗑️ Clear</button>
+        </div>
+
+        <div class="response-section">
+          <div class="response-header">
+            <h3>Response:</h3>
+            <div class="status">
+              <span class="status-dot" id="statusDot"></span>
+              <span id="statusText">Idle</span>
+            </div>
+          </div>
+          <div class="response-box" id="response"></div>
+          <div class="stats">
+            <div class="stat-item">
+              <span class="stat-label">Time:</span>
+              <span id="timeStat">0ms</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Chunks:</span>
+              <span id="chunksStat">0</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-label">Characters:</span>
+              <span id="charsStat">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const API_BASE = "http://localhost:8000";
+      let startTime = 0;
+      let chunkCount = 0;
+      let charCount = 0;
+
+      function setStatus(text, active = false) {
+        document.getElementById("statusText").textContent = text;
+        document.getElementById("statusDot").classList.toggle("active", active);
+      }
+
+      function updateStats() {
+        const elapsed = startTime ? Date.now() - startTime : 0;
+        document.getElementById("timeStat").textContent = `${elapsed}ms`;
+        document.getElementById("chunksStat").textContent = chunkCount;
+        document.getElementById("charsStat").textContent = charCount;
+      }
+
+      function resetStats() {
+        startTime = 0;
+        chunkCount = 0;
+        charCount = 0;
+        updateStats();
+      }
+
+      function clearResponse() {
+        document.getElementById("response").textContent = "";
+        resetStats();
+        setStatus("Idle");
+      }
+
+      async function sendStreamingRequest() {
+        const message = document.getElementById("message").value.trim();
+        if (!message) {
+          alert("Please enter a message");
+          return;
+        }
+
+        const responseBox = document.getElementById("response");
+        responseBox.textContent = "";
+        resetStats();
+
+        const btnStream = document.getElementById("btnStream");
+        const btnNormal = document.getElementById("btnNormal");
+        btnStream.disabled = true;
+        btnNormal.disabled = true;
+
+        setStatus("Streaming...", true);
+        startTime = Date.now();
+
+        try {
+          const response = await fetch(`${API_BASE}/chat/stream`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ message }),
+          });
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const reader = response.body.getReader();
+          const decoder = new TextDecoder();
+
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+
+            const chunk = decoder.decode(value);
+            const lines = chunk.split("\n");
+
+            for (const line of lines) {
+              if (line.startsWith("data: ")) {
+                try {
+                  const data = JSON.parse(line.substring(6));
+
+                  if (data.error) {
+                    throw new Error(data.error);
+                  }
+
+                  if (!data.done && data.chunk) {
+                    responseBox.textContent += data.chunk;
+                    chunkCount++;
+                    charCount += data.chunk.length;
+                    updateStats();
+                  }
+                } catch (e) {
+                  console.error("Error parsing chunk:", e);
+                }
+              }
+            }
+          }
+
+          setStatus("Complete");
+        } catch (error) {
+          console.error("Error:", error);
+          responseBox.innerHTML = `<div class="error">Error: ${error.message}</div>`;
+          setStatus("Error");
+        } finally {
+          btnStream.disabled = false;
+          btnNormal.disabled = false;
+          updateStats();
+        }
+      }
+
+      async function sendNormalRequest() {
+        const message = document.getElementById("message").value.trim();
+        if (!message) {
+          alert("Please enter a message");
+          return;
+        }
+
+        const responseBox = document.getElementById("response");
+        responseBox.textContent = "";
+        resetStats();
+
+        const btnStream = document.getElementById("btnStream");
+        const btnNormal = document.getElementById("btnNormal");
+        btnStream.disabled = true;
+        btnNormal.disabled = true;
+
+        setStatus("Loading...", true);
+        startTime = Date.now();
+
+        try {
+          const response = await fetch(`${API_BASE}/chat`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ message }),
+          });
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const data = await response.json();
+          responseBox.textContent = data.response;
+          charCount = data.response.length;
+          chunkCount = 1;
+          setStatus("Complete");
+        } catch (error) {
+          console.error("Error:", error);
+          responseBox.innerHTML = `<div class="error">Error: ${error.message}</div>`;
+          setStatus("Error");
+        } finally {
+          btnStream.disabled = false;
+          btnNormal.disabled = false;
+          updateStats();
+        }
+      }
+
+      // Enable Enter key to send (Ctrl+Enter for newline)
+      document.getElementById("message").addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && !e.shiftKey && !e.ctrlKey) {
+          e.preventDefault();
+          sendStreamingRequest();
+        }
+      });
+    </script>
+  </body>
+</html>

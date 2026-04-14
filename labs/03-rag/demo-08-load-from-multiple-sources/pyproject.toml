@@ -1,0 +1,12 @@
+[project]
+name = "demo-08-load-from-multiple-sources"
+version = "0.1.0"
+description = "Load documents from multiple sources (PDF, text, web) using LangChain loaders"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "langchain>=0.1.0",
+    "langchain-community>=0.0.20",
+    "pypdf>=4.0.0",
+    "beautifulsoup4>=4.12.0",
+]
