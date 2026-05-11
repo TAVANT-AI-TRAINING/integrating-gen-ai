@@ -1,0 +1,17 @@
+[project]
+name = "demo-02-retrieval-metrics"
+version = "0.1.0"
+description = "Retrieval Metrics: Manual calculation of Precision@K, Recall@K, MRR, and MAP"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "python-dotenv>=1.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+only-include = ["main.py"]

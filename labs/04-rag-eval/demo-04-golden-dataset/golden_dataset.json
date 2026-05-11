@@ -1,0 +1,139 @@
+{
+  "name": "HR Knowledge Base Evaluation Dataset",
+  "created_at": "2026-05-11T08:03:49.792688+00:00",
+  "version": "1.0",
+  "document_count": 6,
+  "qa_pairs": [
+    {
+      "question": "How many days per week can employees work remotely?",
+      "ground_truth_answer": "Employees are authorized to work remotely up to 3 days per week.",
+      "source_document_id": "doc_001",
+      "difficulty": "easy",
+      "category": "factual"
+    },
+    {
+      "question": "What are the core hours during which employees must maintain availability while working remotely?",
+      "ground_truth_answer": "Employees must maintain availability during core hours from 10 AM to 3 PM.",
+      "source_document_id": "doc_001",
+      "difficulty": "medium",
+      "category": "factual"
+    },
+    {
+      "question": "What are the eligibility requirements for an employee to work remotely?",
+      "ground_truth_answer": "Employees must have completed their 90-day probationary period and have a performance rating of 'Meets Expectations' or higher.",
+      "source_document_id": "doc_001",
+      "difficulty": "hard",
+      "category": "procedural"
+    },
+    {
+      "question": "What type of insurance coverage is provided for employees and their dependents?",
+      "ground_truth_answer": "Health insurance: medical, dental, and vision coverage for employee and dependents.",
+      "source_document_id": "doc_002",
+      "difficulty": "easy",
+      "category": "factual"
+    },
+    {
+      "question": "How many vacation days does an employee receive in their first year?",
+      "ground_truth_answer": "15 days per year.",
+      "source_document_id": "doc_002",
+      "difficulty": "medium",
+      "category": "factual"
+    },
+    {
+      "question": "Compare the parental leave benefits for primary and secondary caregivers.",
+      "ground_truth_answer": "Primary caregivers receive 12 weeks of paid leave, while secondary caregivers receive 4 weeks of paid leave.",
+      "source_document_id": "doc_002",
+      "difficulty": "hard",
+      "category": "comparative"
+    },
+    {
+      "question": "What is the minimum test coverage required for new code?",
+      "ground_truth_answer": "The minimum test coverage required for new code is 80%.",
+      "source_document_id": "doc_003",
+      "difficulty": "easy",
+      "category": "factual"
+    },
+    {
+      "question": "What are the steps involved in the pull request process?",
+      "ground_truth_answer": "1. Create feature branch from main; 2. Submit pull request with description of changes; 3. Minimum 2 reviewer approvals required (1 senior engineer); 4. All automated CI checks must pass; 5. Squash commits before merging.",
+      "source_document_id": "doc_003",
+      "difficulty": "medium",
+      "category": "procedural"
+    },
+    {
+      "question": "How does the code review policy ensure code quality and security?",
+      "ground_truth_answer": "The code review policy ensures code quality by focusing on code quality and maintainability, test coverage, documentation completeness, and security considerations including vulnerability scanning.",
+      "source_document_id": "doc_003",
+      "difficulty": "hard",
+      "category": "comparative"
+    },
+    {
+      "question": "What is the minimum password length required by the password policy?",
+      "ground_truth_answer": "The minimum password length required is 12 characters.",
+      "source_document_id": "doc_004",
+      "difficulty": "easy",
+      "category": "factual"
+    },
+    {
+      "question": "What steps should you take if you need to report a security incident?",
+      "ground_truth_answer": "You should report security incidents immediately to security@company.com or call IT Security at ext. 5555.",
+      "source_document_id": "doc_004",
+      "difficulty": "medium",
+      "category": "procedural"
+    },
+    {
+      "question": "How does the password rotation policy compare to the requirement of not reusing passwords?",
+      "ground_truth_answer": "The password rotation policy requires passwords to be changed every 90 days, while the requirement of not reusing passwords prohibits the use of the last 10 passwords.",
+      "source_document_id": "doc_004",
+      "difficulty": "hard",
+      "category": "comparative"
+    },
+    {
+      "question": "How often are performance reviews conducted?",
+      "ground_truth_answer": "Performance reviews are conducted twice per year: mid-year (June) and year-end (December).",
+      "source_document_id": "doc_005",
+      "difficulty": "easy",
+      "category": "factual"
+    },
+    {
+      "question": "What steps are involved in the performance review process?",
+      "ground_truth_answer": "1. Employee completes self-assessment (2 weeks before review) 2. Manager completes assessment independently 3. 1:1 review meeting to discuss ratings and development plan 4. Goals set for next review period (SMART goals required) 5. HR sign-off for ratings of EE or DNE.",
+      "source_document_id": "doc_005",
+      "difficulty": "medium",
+      "category": "procedural"
+    },
+    {
+      "question": "How does the merit increase differ between 'Exceeds Expectations' and 'Partially Meets Expectations' ratings?",
+      "ground_truth_answer": "Employees rated 'Exceeds Expectations' receive a merit increase of 5-8%, while those rated 'Partially Meets Expectations' receive 0-2%.",
+      "source_document_id": "doc_005",
+      "difficulty": "hard",
+      "category": "comparative"
+    },
+    {
+      "question": "What is the maximum reimbursement limit for client meals per person?",
+      "ground_truth_answer": "$75 per person per meal",
+      "source_document_id": "doc_006",
+      "difficulty": "easy",
+      "category": "factual"
+    },
+    {
+      "question": "What steps must be followed to submit an expense for reimbursement?",
+      "ground_truth_answer": "1. Submit expenses within 30 days of incurring the expense; 2. All receipts required for expenses over $25; 3. Submit via Concur expense management system; 4. Manager approval required for all submissions; 5. Reimbursement processed within 2 business days of approval.",
+      "source_document_id": "doc_006",
+      "difficulty": "medium",
+      "category": "procedural"
+    },
+    {
+      "question": "How does the reimbursement process differ for flights based on duration?",
+      "ground_truth_answer": "Economy class is eligible for trips under 6 hours, while business class is eligible for trips over 6 hours.",
+      "source_document_id": "doc_006",
+      "difficulty": "hard",
+      "category": "comparative"
+    }
+  ],
+  "metadata": {
+    "model_used": "gpt-4o-mini",
+    "n_pairs_per_doc": 3,
+    "total_qa_pairs": 18
+  }
+}
