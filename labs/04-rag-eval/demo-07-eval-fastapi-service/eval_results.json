@@ -1,0 +1,556 @@
+[
+  {
+    "eval_id": "fd4a2663",
+    "query": "How many days can employees work remotely per week?",
+    "answer": "Employees can work remotely up to 3 days per week with manager approval. They must remain available during core hours from 10 AM to 3 PM.",
+    "faithfulness": {
+      "score": 1.0,
+      "reasoning": "The answer accurately reflects the context provided, stating that employees can work remotely up to 3 days per week with manager approval and must maintain availability during core hours from 10 AM to 3 PM.",
+      "passed": true,
+      "threshold": 0.7
+    },
+    "relevance": {
+      "score": 1.0,
+      "reasoning": "The answer directly addresses the user's question by specifying the number of days employees can work remotely per week and includes relevant conditions regarding manager approval and availability during core hours.",
+      "passed": true,
+      "threshold": 0.7
+    },
+    "groundedness": {
+      "score": 1.0,
+      "reasoning": "The answer accurately reflects the information provided in the context without adding any external information.",
+      "passed": true,
+      "threshold": 0.7
+    },
+    "correctness": {
+      "score": 1.0,
+      "reasoning": "The answer accurately reflects the ground truth regarding remote work policy, including the stipulation of manager approval and the specific limit of 3 days per week. The additional detail about remaining available during core hours does not contradict the ground truth and provides further clarity.",
+      "passed": true,
+      "threshold": 0.6
+    },
+    "overall_pass": true,
+    "eval_timestamp": "2026-05-12T07:17:36.587348+00:00"
+  },
+  {
+    "eval_id": "4ecb14a8",
+    "query": "How many vacation days do employees get?",
+    "answer": "Employees receive 15 vacation days per year, plus an additional 5 bonus days after their first year, and unlimited PTO after 10 years of service.",
+    "faithfulness": {
+      "score": 0.0,
+      "reasoning": "The answer inaccurately states that employees receive an additional 5 bonus days after their first year and unlimited PTO after 10 years of service, which is not supported by the context provided. The context only mentions 15 vacation days per year and 10 sick leave days per year, with no mention of bonus days or unlimited PTO.",
+      "passed": false,
+      "threshold": 0.7
+    },
+    "relevance": {
+      "score": 1.0,
+      "reasoning": "The answer directly addresses the user's question by providing specific information about the number of vacation days employees receive, including details about additional days and changes over time.",
+      "passed": true,
+      "threshold": 0.7
+    },
+    "groundedness": {
+      "score": 0.0,
+      "reasoning": "The answer introduces additional information about bonus days and unlimited PTO that is not present in the provided context, which only specifies 15 vacation days and 10 sick leave days.",
+      "passed": false,
+      "threshold": 0.7
+    },
+    "correctness": {
+      "score": 0.5,
+      "reasoning": "The answer correctly states that employees receive 15 vacation days per year, which matches the ground truth. However, it adds information about bonus days and unlimited PTO that is not present in the ground truth, making the overall statement partially correct but not fully aligned with the provided reference.",
+      "passed": false,
+      "threshold": 0.6
+    },
+    "overall_pass": false,
+    "eval_timestamp": "2026-05-12T07:17:45.835479+00:00"
+  },
+  {
+    "eval_id": "930327e4",
+    "query": "What are the password security requirements?",
+    "answer": "The company offers excellent health benefits including medical, dental, and vision coverage. The 401k plan includes a 5% company match.",
+    "faithfulness": {
+      "score": 0.0,
+      "reasoning": "The answer does not relate to the context provided about security guidelines. It discusses health benefits and a 401k plan, which are unrelated to the topics of strong passwords and two-factor authentication.",
+      "passed": false,
+      "threshold": 0.7
+    },
+    "relevance": {
+      "score": 0.0,
+      "reasoning": "The answer does not address the user's question about password security requirements at all. Instead, it provides information about health benefits and a 401k plan, which is irrelevant to the topic of password security.",
+      "passed": false,
+      "threshold": 0.7
+    },
+    "groundedness": {
+      "score": 0.0,
+      "reasoning": "The answer introduces unrelated information about health benefits and a 401k plan, which is not mentioned in the provided context about security guidelines.",
+      "passed": false,
+      "threshold": 0.7
+    },
+    "correctness": null,
+    "overall_pass": false,
+    "eval_timestamp": "2026-05-12T07:17:52.183035+00:00"
+  },
+  {
+    "eval_id": "dcc9df5b",
+    "query": "What is the annual training budget for employees?",
+    "answer": "Each employee receives $2,000 per year for professional development, training, and certifications.",
+    "faithfulness": {
+      "score": 1.0,
+      "reasoning": "The answer accurately reflects the information provided in the context regarding the annual training budget of $2,000 for professional development and certifications.",
+      "passed": true,
+      "threshold": 0.7
+    },
+    "relevance": {
+      "score": 1.0,
+      "reasoning": "The answer directly addresses the user's question by providing a specific figure for the annual training budget allocated per employee.",
+      "passed": true,
+      "threshold": 0.7
+    },
+    "groundedness": {
+      "score": 1.0,
+      "reasoning": "The answer accurately reflects the information provided in the context regarding the annual training budget for professional development without adding any external information.",
+      "passed": true,
+      "threshold": 0.7
+    },
+    "correctness": null,
+    "overall_pass": true,
+    "eval_timestamp": "2026-05-12T07:17:58.328206+00:00"
+  },
+  {
+    "type": "batch",
+    "eval_id": "8c6c0e61",
+    "total_cases": 8,
+    "passed_cases": 6,
+    "pass_rate": 0.75,
+    "aggregate_scores": {
+      "faithfulness": 1.0,
+      "relevance": 0.9,
+      "groundedness": 1.0,
+      "correctness": 0.9375
+    },
+    "per_case_results": [
+      {
+        "eval_id": "248e9a6b",
+        "query": "How many days can employees work remotely?",
+        "answer": "Employees can work remotely up to 3 days per week with manager approval.",
+        "faithfulness": {
+          "score": 1.0,
+          "reasoning": "The answer accurately reflects the context provided, stating that employees are authorized to work remotely up to 3 days per week with manager approval.",
+          "passed": true,
+          "threshold": 0.7
+        },
+        "relevance": {
+          "score": 1.0,
+          "reasoning": "The answer directly addresses the user's question by providing a specific number of days employees can work remotely, along with the condition of needing manager approval.",
+          "passed": true,
+          "threshold": 0.7
+        },
+        "groundedness": {
+          "score": 1.0,
+          "reasoning": "The answer accurately reflects the information provided in the context regarding the remote work policy without adding any external information.",
+          "passed": true,
+          "threshold": 0.7
+        },
+        "correctness": {
+          "score": 1.0,
+          "reasoning": "The answer accurately reflects the ground truth statement, maintaining the same meaning and details regarding remote work policy.",
+          "passed": true,
+          "threshold": 0.6
+        },
+        "overall_pass": true,
+        "eval_timestamp": "2026-05-12T07:18:53.155254+00:00"
+      },
+      {
+        "eval_id": "835c6e9e",
+        "query": "What is the 401k company match?",
+        "answer": "The 401(k) company match is 5%.",
+        "faithfulness": {
+          "score": 1.0,
+          "reasoning": "The answer accurately reflects the information provided in the context regarding the 401(k) company match being 5%.",
+          "passed": true,
+          "threshold": 0.7
+        },
+        "relevance": {
+          "score": 0.5,
+          "reasoning": "The answer provides a specific percentage for the company match, but it lacks context and explanation about what a 401(k) company match is, how it works, and its significance. A more comprehensive answer would better address the user's question.",
+          "passed": false,
+          "threshold": 0.7
+        },
+        "groundedness": {
+          "score": 1.0,
+          "reasoning": "The answer directly references the information provided in the context about the 401(k) company match without adding any external information.",
+          "passed": true,
+          "threshold": 0.7
+        },
+        "correctness": {
+          "score": 1.0,
+          "reasoning": "The answer accurately reflects the information provided in the ground truth, stating that the company matches 5% of employee contributions.",
+          "passed": true,
+          "threshold": 0.6
+        },
+        "overall_pass": false,
+        "eval_timestamp": "2026-05-12T07:19:02.732424+00:00"
+      },
+      {
+        "eval_id": "fbfcc01a",
+        "query": "How many weeks of paid parental leave for primary caregivers?",
+        "answer": "Primary caregivers receive 12 weeks of paid parental leave.",
+        "faithfulness": {
+          "score": 1.0,
+          "reasoning": "The answer accurately reflects the information provided in the context regarding parental leave for primary caregivers.",
+          "passed": true,
+          "threshold": 0.7
+        },
+        "relevance": {
+          "score": 1.0,
+          "reasoning": "The answer directly addresses the user's question by providing a specific duration of paid parental leave for primary caregivers.",
+          "passed": true,
+          "threshold": 0.7
+        },
+        "groundedness": {
+          "score": 1.0,
+          "reasoning": "The answer accurately reflects the information provided in the context regarding parental leave for primary caregivers without adding any external information.",
+          "passed": true,
+          "threshold": 0.7
+        },
+        "correctness": {
+          "score": 1.0,
+          "reasoning": "The answer accurately reflects the ground truth by stating that primary caregivers receive 12 weeks of paid parental leave, which is consistent with the provided information.",
+          "passed": true,
+          "threshold": 0.6
+        },
+        "overall_pass": true,
+        "eval_timestamp": "2026-05-12T07:19:10.051822+00:00"
+      },
+      {
+        "eval_id": "a37f9407",
+        "query": "What is the minimum password length?",
+        "answer": "The minimum password length is 12 characters.",
+        "faithfulness": {
+          "score": 1.0,
+          "reasoning": "The answer accurately reflects the context provided, which states that passwords must be a minimum of 12 characters.",
+          "passed": true,
+          "threshold": 0.7
+        },
+        "relevance": {
+          "score": 1.0,
+          "reasoning": "The answer directly addresses the user's question by providing a specific minimum password length.",
+          "passed": true,
+          "threshold": 0.7
+        },
+        "groundedness": {
+          "score": 1.0,
+          "reasoning": "The answer directly addresses the context provided about security requirements without adding any external information.",
+          "passed": true,
+          "threshold": 0.7
+        },
+        "correctness": {
+          "score": 0.5,
+          "reasoning": "The answer correctly states the minimum password length of 12 characters but fails to mention the complexity requirements, which are part of the ground truth.",
+          "passed": false,
+          "threshold": 0.6
+        },
+        "overall_pass": false,
+        "eval_timestamp": "2026-05-12T07:19:18.179074+00:00"
+      },
+      {
+        "eval_id": "62980ed5",
+        "query": "How many reviewer approvals for a pull request?",
+        "answer": "A minimum of 2 approvals is required for a pull request, including 1 senior engineer.",
+        "faithfulness": {
+          "score": 1.0,
+          "reasoning": "The answer accurately reflects the context by stating that a minimum of 2 approvals is required for a pull request, including 1 senior engineer, which is directly supported by the provided code review guidelines.",
+          "passed": true,
+          "threshold": 0.7
+        },
+        "relevance": {
+          "score": 1.0,
+          "reasoning": "The answer directly addresses the user's question by specifying the number of reviewer approvals required for a pull request, including the stipulation about needing one senior engineer's approval.",
+          "passed": true,
+          "threshold": 0.7
+        },
+        "groundedness": {
+          "score": 1.0,
+          "reasoning": "The answer directly reflects the information provided in the context regarding code review requirements without adding any external information.",
+          "passed": true,
+          "threshold": 0.7
+        },
+        "correctness": {
+          "score": 1.0,
+          "reasoning": "The answer accurately reflects the ground truth by stating that a minimum of 2 approvals is required, including 1 senior engineer, without any discrepancies.",
+          "passed": true,
+          "threshold": 0.6
+        },
+        "overall_pass": true,
+        "eval_timestamp": "2026-05-12T07:19:27.748045+00:00"
+      },
+      {
+        "eval_id": "a0c9d900",
+        "query": "What is the annual training budget per employee?",
+        "answer": "The annual training budget per employee is $2,000.",
+        "faithfulness": {
+          "score": 1.0,
+          "reasoning": "The answer accurately reflects the information provided in the context regarding the annual training budget.",
+          "passed": true,
+          "threshold": 0.7
+        },
+        "relevance": {
+          "score": 1.0,
+          "reasoning": "The answer directly addresses the user's question by providing a specific figure for the annual training budget per employee.",
+          "passed": true,
+          "threshold": 0.7
+        },
+        "groundedness": {
+          "score": 1.0,
+          "reasoning": "The answer directly reflects the information provided in the context regarding the annual training budget without adding any external information.",
+          "passed": true,
+          "threshold": 0.7
+        },
+        "correctness": {
+          "score": 1.0,
+          "reasoning": "The answer accurately reflects the ground truth statement, stating that the annual training budget per employee is $2,000, which is consistent with the provided information.",
+          "passed": true,
+          "threshold": 0.6
+        },
+        "overall_pass": true,
+        "eval_timestamp": "2026-05-12T07:19:36.919615+00:00"
+      },
+      {
+        "eval_id": "626c3018",
+        "query": "How long should meetings be?",
+        "answer": "Meetings should be 30 minutes or less.",
+        "faithfulness": {
+          "score": 1.0,
+          "reasoning": "The answer accurately reflects the context provided, which states that meetings should be kept to 30 minutes or less.",
+          "passed": true,
+          "threshold": 0.7
+        },
+        "relevance": {
+          "score": 0.7,
+          "reasoning": "The answer provides a specific duration for meetings, which addresses the user's question about how long meetings should be. However, it lacks context or flexibility regarding different types of meetings or situations that might require longer durations.",
+          "passed": true,
+          "threshold": 0.7
+        },
+        "groundedness": {
+          "score": 1.0,
+          "reasoning": "The answer directly reflects the information provided in the context about meetings, staying within the specified guidelines without adding any external information.",
+          "passed": true,
+          "threshold": 0.7
+        },
+        "correctness": {
+          "score": 1.0,
+          "reasoning": "The answer provided is identical to the ground truth reference, thus it is factually correct.",
+          "passed": true,
+          "threshold": 0.6
+        },
+        "overall_pass": true,
+        "eval_timestamp": "2026-05-12T07:19:44.268781+00:00"
+      },
+      {
+        "eval_id": "0351ae41",
+        "query": "What is the hotel expense limit?",
+        "answer": "The hotel expense limit is $250 per night.",
+        "faithfulness": {
+          "score": 1.0,
+          "reasoning": "The answer accurately reflects the information provided in the context regarding the hotel expense limit.",
+          "passed": true,
+          "threshold": 0.7
+        },
+        "relevance": {
+          "score": 1.0,
+          "reasoning": "The answer directly addresses the user's question by providing a specific limit for hotel expenses.",
+          "passed": true,
+          "threshold": 0.7
+        },
+        "groundedness": {
+          "score": 1.0,
+          "reasoning": "The answer directly references the hotel expense limit stated in the provided context without adding any external information.",
+          "passed": true,
+          "threshold": 0.7
+        },
+        "correctness": {
+          "score": 1.0,
+          "reasoning": "The answer accurately reflects the ground truth statement regarding the hotel expense limit for US domestic travel, stating it is $250 per night.",
+          "passed": true,
+          "threshold": 0.6
+        },
+        "overall_pass": true,
+        "eval_timestamp": "2026-05-12T07:19:51.573650+00:00"
+      }
+    ],
+    "timestamp": "2026-05-12T07:19:58.215039+00:00"
+  },
+  {
+    "eval_id": "adf3aa31",
+    "query": "How many days can employees work remotely?",
+    "answer": "Employees can work remotely up to 3 days per week.",
+    "faithfulness": {
+      "score": 1.0,
+      "reasoning": "The answer accurately reflects the information provided in the context regarding the remote work policy, stating that employees are authorized to work remotely up to 3 days per week.",
+      "passed": true,
+      "threshold": 0.7
+    },
+    "relevance": {
+      "score": 1.0,
+      "reasoning": "The answer directly addresses the user's question by providing a specific number of days (3 days per week) that employees can work remotely.",
+      "passed": true,
+      "threshold": 0.7
+    },
+    "groundedness": {
+      "score": 1.0,
+      "reasoning": "The answer accurately reflects the information provided in the context without adding any external information.",
+      "passed": true,
+      "threshold": 0.7
+    },
+    "correctness": {
+      "score": 1.0,
+      "reasoning": "The answer accurately reflects the information from the ground truth by stating that employees can work remotely up to 3 days per week. However, it omits the requirement of manager approval, which is a crucial part of the original statement. Despite this omission, the core fact about the number of days remains correct.",
+      "passed": true,
+      "threshold": 0.6
+    },
+    "overall_pass": true,
+    "eval_timestamp": "2026-05-12T07:22:39.693778+00:00"
+  },
+  {
+    "eval_id": "e9b8c48e",
+    "query": "How many days can employees work remotely?",
+    "answer": "Employees can work remotely up to 3 days per week.",
+    "faithfulness": {
+      "score": 1.0,
+      "reasoning": "The answer accurately reflects the information provided in the context, stating that employees are authorized to work remotely up to 3 days per week.",
+      "passed": true,
+      "threshold": 0.7
+    },
+    "relevance": {
+      "score": 1.0,
+      "reasoning": "The answer directly addresses the user's question by providing a specific number of days (3 days per week) that employees can work remotely.",
+      "passed": true,
+      "threshold": 0.7
+    },
+    "groundedness": {
+      "score": 1.0,
+      "reasoning": "The answer accurately reflects the information provided in the context without adding any external information.",
+      "passed": true,
+      "threshold": 0.7
+    },
+    "correctness": {
+      "score": 1.0,
+      "reasoning": "The answer accurately reflects the information from the ground truth by stating that employees can work remotely up to 3 days per week. However, it omits the requirement of manager approval, which is a critical part of the original statement. Despite this omission, the core information about the number of days is correct.",
+      "passed": true,
+      "threshold": 0.6
+    },
+    "overall_pass": true,
+    "eval_timestamp": "2026-05-12T07:26:39.735297+00:00"
+  },
+  {
+    "eval_id": "90d00843",
+    "query": "How many days can employees work remotely per week?",
+    "answer": "Employees can work remotely up to 3 days per week with manager approval. They must remain available during core hours from 10 AM to 3 PM.",
+    "faithfulness": {
+      "score": 1.0,
+      "reasoning": "The answer accurately reflects the context by stating that employees can work remotely up to 3 days per week with manager approval and that they must maintain availability during core hours from 10 AM to 3 PM.",
+      "passed": true,
+      "threshold": 0.7
+    },
+    "relevance": {
+      "score": 1.0,
+      "reasoning": "The answer directly addresses the user's question by specifying the number of days employees can work remotely per week and includes relevant details about manager approval and availability during core hours.",
+      "passed": true,
+      "threshold": 0.7
+    },
+    "groundedness": {
+      "score": 1.0,
+      "reasoning": "The answer accurately reflects the information provided in the context without adding any external information.",
+      "passed": true,
+      "threshold": 0.7
+    },
+    "correctness": {
+      "score": 1.0,
+      "reasoning": "The answer provided is factually correct as it accurately reflects the ground truth statement regarding remote work policy. It also adds additional information about availability during core hours, which does not contradict the original statement.",
+      "passed": true,
+      "threshold": 0.6
+    },
+    "overall_pass": true,
+    "eval_timestamp": "2026-05-12T07:31:06.813171+00:00"
+  },
+  {
+    "eval_id": "5633bde9",
+    "query": "How many vacation days do employees get?",
+    "answer": "Employees receive 15 vacation days per year, plus an additional 5 bonus days after their first year, and unlimited PTO after 10 years of service.",
+    "faithfulness": {
+      "score": 0.0,
+      "reasoning": "The answer inaccurately states that employees receive an additional 5 bonus days after their first year and unlimited PTO after 10 years of service, which is not supported by the context provided. The context only mentions 15 vacation days per year and 10 sick leave days per year, with no mention of bonus days or unlimited PTO.",
+      "passed": false,
+      "threshold": 0.7
+    },
+    "relevance": {
+      "score": 1.0,
+      "reasoning": "The answer directly addresses the user's question by providing specific information about the number of vacation days employees receive, including details about additional days and changes over time.",
+      "passed": true,
+      "threshold": 0.7
+    },
+    "groundedness": {
+      "score": 0.0,
+      "reasoning": "The answer introduces additional information about bonus days and unlimited PTO that is not present in the provided context, which only specifies 15 vacation days and 10 sick leave days.",
+      "passed": false,
+      "threshold": 0.7
+    },
+    "correctness": {
+      "score": 0.5,
+      "reasoning": "The answer correctly states that employees receive 15 vacation days per year, which matches the ground truth. However, it adds information about bonus days and unlimited PTO that is not present in the ground truth, making the overall statement partially correct but not fully aligned with the provided reference.",
+      "passed": false,
+      "threshold": 0.6
+    },
+    "overall_pass": false,
+    "eval_timestamp": "2026-05-12T07:31:16.397553+00:00"
+  },
+  {
+    "eval_id": "0516d5d3",
+    "query": "What are the password security requirements?",
+    "answer": "The company offers excellent health benefits including medical, dental, and vision coverage. The 401k plan includes a 5% company match.",
+    "faithfulness": {
+      "score": 0.0,
+      "reasoning": "The answer does not relate to the context provided about security guidelines. It discusses health benefits and a 401k plan, which are not mentioned or implied in the context.",
+      "passed": false,
+      "threshold": 0.7
+    },
+    "relevance": {
+      "score": 0.0,
+      "reasoning": "The answer does not address the user's question about password security requirements at all. Instead, it provides information about health benefits and a 401k plan, which is completely unrelated.",
+      "passed": false,
+      "threshold": 0.7
+    },
+    "groundedness": {
+      "score": 0.0,
+      "reasoning": "The answer provides information about health benefits and a 401k plan, which is unrelated to the context of security guidelines regarding passwords and two-factor authentication.",
+      "passed": false,
+      "threshold": 0.7
+    },
+    "correctness": null,
+    "overall_pass": false,
+    "eval_timestamp": "2026-05-12T07:31:24.355236+00:00"
+  },
+  {
+    "eval_id": "4e0b6ce4",
+    "query": "What is the annual training budget for employees?",
+    "answer": "Each employee receives $2,000 per year for professional development, training, and certifications.",
+    "faithfulness": {
+      "score": 1.0,
+      "reasoning": "The answer accurately reflects the information provided in the context regarding the annual training budget of $2,000 for professional development and certifications.",
+      "passed": true,
+      "threshold": 0.7
+    },
+    "relevance": {
+      "score": 1.0,
+      "reasoning": "The answer directly addresses the user's question by providing a specific figure for the annual training budget allocated per employee.",
+      "passed": true,
+      "threshold": 0.7
+    },
+    "groundedness": {
+      "score": 1.0,
+      "reasoning": "The answer accurately reflects the information provided in the context regarding the annual training budget for professional development without adding any external information.",
+      "passed": true,
+      "threshold": 0.7
+    },
+    "correctness": null,
+    "overall_pass": true,
+    "eval_timestamp": "2026-05-12T07:31:29.643499+00:00"
+  }
+]
