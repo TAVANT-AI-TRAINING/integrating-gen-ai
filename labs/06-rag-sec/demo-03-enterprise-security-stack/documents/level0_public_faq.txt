@@ -1,0 +1,22 @@
+AcmeCorp Employee FAQ — PUBLIC (clearance level 0)
+
+Q: What are your office hours?
+A: Our offices are open Monday to Friday, 8 AM to 6 PM.
+   Core collaboration hours for all meetings are 10 AM to 3 PM.
+
+Q: How do I contact the HR team?
+A: You can reach HR at hr@acmecorp.com or visit the HR portal at hr.acmecorp.internal.
+   For urgent matters, call the HR helpline on ext. 4400.
+
+Q: How do I raise an IT support request?
+A: Submit a ticket via help.acmecorp.internal or call the IT helpdesk on ext. 1234.
+   Standard SLA is next business day for non-critical issues.
+
+Q: Where do I find the employee handbook?
+A: The full handbook is available on the intranet under Company Resources → HR Policies.
+   New employees receive a printed copy during onboarding.
+
+Q: What benefits does AcmeCorp offer?
+A: We offer private health insurance, pension contributions, 25 days annual leave,
+   a cycle-to-work scheme, gym membership subsidy, and an employee assistance programme.
+   Full details are on the benefits portal at benefits.acmecorp.internal.
